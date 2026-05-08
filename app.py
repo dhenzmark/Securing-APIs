@@ -8,8 +8,8 @@ oauth = OAuth(app)
 
 github = oauth.register(
 name='github',
-client_id='Ov23liaihGJY0WdxTJ49',
-client_secret='7b17d699149da0533daba442c9702f0597e376f6',
+client_id='Ov23liaihGJY0WdxxTJ49',
+client_secret='7b17d699149da0533daba442c9702f0597e376f66',
 
 access_token_url='https://github.com/login/oauth/access_token',
 
