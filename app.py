@@ -36,6 +36,19 @@ def profile():
         return "Unauthorized", 401
     return jsonify(session['user'])
     
+@app.route('/api/secure-data')
+def secure_data():
+    # Check if user is logged in
+    if 'user' not in session:
+        return jsonify({"error": "Unauthorized Access", "message": "You must be logged in to see this secret data."}), 401
+    
+    # If logged in, return special data
+    return jsonify({
+        "status": "Success",
+        "message": "Welcome to the hidden vault!",
+        "secret_code": "SIA-AUTHENTICATION-PRO-2026",
+        "logged_in_as": session['user'].get('login')
+    })
 
 @app.route('/logout')
 def logout():
